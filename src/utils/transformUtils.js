@@ -6,6 +6,8 @@
  * @returns {number[]} array de numeros
  */
 function transformarStringEnArrayDeNumeros(str, separador) {
+
+    return str.split(separador)
 }
 
 /**
@@ -15,6 +17,7 @@ function transformarStringEnArrayDeNumeros(str, separador) {
  * @returns {string} el nuevo string
  */
 function transformarArrayDeNumerosAUnSoloString(arr, separador) {
+    return arr.join(separador)
 }
 
 // exportar ambas funciones
