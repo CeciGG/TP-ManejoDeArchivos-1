@@ -7,7 +7,9 @@
  */
 function transformarStringEnArrayDeNumeros(str, separador) {
 
-    return str.split(separador).map(s => Number(s.trim()))
+    return str.split(separador)
+    .map(s => Number(s.trim()))
+    .filter(n => !isNaN(n))
 }
 
 /**
