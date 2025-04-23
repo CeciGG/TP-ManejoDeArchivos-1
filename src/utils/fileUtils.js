@@ -16,9 +16,12 @@ function leerArchivoComoString(ruta) {
  */
 function escribirTextoEnArchivo(ruta, texto, shouldCreateIfNotExists) {
     try{
+        if(!shouldCreateIfNotExists){
+            leerArchivoComoString(ruta)
+        }
         fs.writeFileSync(ruta, texto)
     }catch (error){
-        console.log(`Error en operación sincrónica de escritura: ${error.message}`)
+        console.log('El archivo no existe.')
     }
 }
 
