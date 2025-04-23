@@ -5,7 +5,8 @@ import  fs from 'fs'
  * @return {string} el texto leído
  */
 function leerArchivoComoString(ruta) {
-    return fs.readFileSync(ruta, 'UTF-8').toString
+
+     return fs.readFileSync(ruta, 'UTF-8')
 }
 
 /**
@@ -17,8 +18,11 @@ function escribirTextoEnArchivo(ruta, texto, shouldCreateIfNotExists) {
     try{
         fs.writeFileSync(ruta, texto)
     }catch (error){
-
+        console.log(`Error en operación sincrónica de escritura: ${error.message}`)
     }
 }
 
-// exportar ambas funciones
+export default{
+    leerArchivoComoString,
+    escribirTextoEnArchivo
+}

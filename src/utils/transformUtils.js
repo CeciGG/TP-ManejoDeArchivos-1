@@ -7,7 +7,7 @@
  */
 function transformarStringEnArrayDeNumeros(str, separador) {
 
-    return str.split(separador)
+    return str.split(separador).map(s => Number(s.trim()))
 }
 
 /**
@@ -20,4 +20,7 @@ function transformarArrayDeNumerosAUnSoloString(arr, separador) {
     return arr.join(separador)
 }
 
-// exportar ambas funciones
+export default{
+    transformarStringEnArrayDeNumeros,
+    transformarArrayDeNumerosAUnSoloString
+}

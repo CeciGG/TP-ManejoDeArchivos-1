@@ -6,7 +6,8 @@
  */
 function combinarDosArrays(arrA, arrB) {
     let combinado = arrA.concat(arrB)
-    return combinado.sort((a, b)=>{return a-b})
+    let combiandoSinDuplicados = combinado.filter((item, index) => combinado.indexOf(item) === index)
+    return combiandoSinDuplicados.sort((a, b)=>{return a-b})
 }
 
 /**
@@ -18,9 +19,15 @@ function combinarNArrays(arrs) {
     let combinado = []
     let i = 0
     while(i < arrs.length){
-        combinado.concat(arrs[i])
+        let arrayAux = arrs[i]
+        combinado = combinarDosArrays(combinado, arrayAux)
+        i++
     }
-    return combinado.sort((a, b)=>{return a-b})
+
+    return combinado
 }
 
-// exportar ambas funciones
+export default{
+    combinarDosArrays,
+    combinarNArrays
+}
