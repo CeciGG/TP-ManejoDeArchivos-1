@@ -26,3 +26,5 @@ let combinadoAyB = apareo.combinarDosArrays(array10NumA, array10NumB)
 
 const matrizTodos = [combinadoAyB, arrayImparesOrdenados, arrayParesOrdenados]
 let combinadoTodos = apareo.combinarNArrays(matrizTodos)
+
+console.log(combinadoTodos)
